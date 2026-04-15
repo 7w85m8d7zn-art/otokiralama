@@ -33,7 +33,10 @@ export async function loginAction(formData: FormData) {
   const { error } = await supabase.auth.signInWithPassword({ email, password });
 
   if (error) {
-    redirect(`/giris?error=${encodeURIComponent(error.message)}`);
+    const errorMessage = error.message.includes("Legacy API keys are disabled")
+      ? "Supabase anahtarı eski tipte. Vercel ortam değişkenlerinde NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY kullanın."
+      : error.message;
+    redirect(`/giris?error=${encodeURIComponent(errorMessage)}`);
   }
 
   redirect("/admin?tab=dashboard");

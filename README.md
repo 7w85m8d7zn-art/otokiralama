@@ -7,8 +7,8 @@ Next.js 14 + Supabase + Tailwind CSS + TypeScript car rental website.
 Copy `.env.example` to `.env.local` and fill:
 
 - `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-- `SUPABASE_SERVICE_ROLE_KEY`
+- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` (recommended) or `NEXT_PUBLIC_SUPABASE_ANON_KEY` (legacy)
+- `SUPABASE_SECRET_KEY` (recommended) or `SUPABASE_SERVICE_ROLE_KEY` (legacy)
 
 ## 2. Supabase Setup
 
