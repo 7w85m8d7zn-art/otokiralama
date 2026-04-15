@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-slate-100 text-gray-800 antialiased;
+}
+
+html,
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.container-main {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.input {
+  @apply w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm outline-none ring-primary transition focus:ring-2;
+}
+
+.button-primary {
+  @apply inline-flex items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90;
+}
+
+.button-muted {
+  @apply inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white px-5 py-3 text-sm font-semibold text-gray-700 transition hover:bg-gray-50;
+}
+
+.card {
+  @apply rounded-2xl border border-slate-200 bg-white p-5 shadow-soft;
+}
+
+body:has([data-auth-page="true"]) {
+  @apply bg-white;
+}
+
+body:has([data-auth-page="true"]) [data-announcement-bar="true"],
+body:has([data-auth-page="true"]) header,
+body:has([data-auth-page="true"]) footer,
+body:has([data-auth-page="true"]) a[aria-label="WhatsApp"] {
+  display: none;
+}
+
+body:has([data-admin-page="true"]) [data-announcement-bar="true"],
+body:has([data-admin-page="true"]) header,
+body:has([data-admin-page="true"]) footer,
+body:has([data-admin-page="true"]) a[aria-label="WhatsApp"] {
+  display: none;
+}
+
+body:has([data-admin-page="true"]) {
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+[data-admin-page="true"] .card {
+  border-color: #e2e8f0;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+[data-admin-page="true"] .input {
+  border-color: #cbd5e1;
+}
+
+[data-admin-page="true"] .input:focus {
+  box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.2);
+}
+
+[data-admin-page="true"] .button-primary {
+  background-color: #0f172a;
+}
+
+[data-admin-page="true"] .button-primary:hover {
+  opacity: 1;
+  background-color: #020617;
+}
+
+[data-admin-page="true"] .button-muted {
+  border-color: #cbd5e1;
+  color: #334155;
+  background-color: #f8fafc;
+}
+
+[data-admin-page="true"] .button-muted:hover {
+  background-color: #f1f5f9;
+}
